@@ -33,7 +33,7 @@ def distribuir_alunos():
 def schedule_task():
     timezone = pytz.timezone('America/Sao_Paulo')
     scheduler = BackgroundScheduler()
-    scheduler.add_job(distribuir_alunos, 'cron', hour=6, minute=53, timezone=timezone)
+    scheduler.add_job(distribuir_alunos, 'cron', hour=9, minute=0, timezone=timezone)
     scheduler.start()
  
 # Rota principal que exibe as mesas
