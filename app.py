@@ -39,7 +39,6 @@ def schedule_task():
 # Rota principal que exibe as mesas
 @app.route('/')
 def show_mesas():
-    distribuir_alunos()  # Chama a função para garantir que as mesas sejam distribuídas
     html_template = '''
     <html>
         <head>
@@ -60,3 +59,4 @@ if __name__ == '__main__':
     distribuir_alunos()  # Inicializa as mesas na primeira execução
     schedule_task()  # Agenda a tarefa para rodar todos os dias às 6 da manhã
     app.run(host='0.0.0.0', port=5000)
+ 
