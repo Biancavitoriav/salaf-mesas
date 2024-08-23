@@ -26,14 +26,15 @@ def distribuir_alunos():
         for mesa in mesas:
             mesa.append(alunos.pop())
  
-    print(f'mesas: {mesas}')
- 
-    print(f'alunos: {alunos}')
+    while alunos:
+        for mesa in mesas:
+            if alunos:
+                mesa.append(alunos.pop())
  
 def schedule_task():
     timezone = pytz.timezone('America/Sao_Paulo')
     scheduler = BackgroundScheduler()
-    scheduler.add_job(distribuir_alunos, 'cron', hour=6, minute=0, timezone=timezone)
+    scheduler.add_job(distribuir_alunos, 'cron', hour=6, minute=53, timezone=timezone)
     scheduler.start()
  
 # Rota principal que exibe as mesas
@@ -59,4 +60,3 @@ if __name__ == '__main__':
     distribuir_alunos()  # Inicializa as mesas na primeira execução
     schedule_task()  # Agenda a tarefa para rodar todos os dias às 6 da manhã
     app.run(host='0.0.0.0', port=5000)
- 
