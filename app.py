@@ -51,7 +51,7 @@ def show_mesas():
                 <h2>Mesa {{ i }}:</h2>
                 <p>{{ ', '.join(mesa) }}</p>
             {% endfor %}
-            <img src="mapademesa.png" alt="" height="50px">
+            <img src="{{ url_for('static', filename='mapademesa.png') }}" alt="" height="100px">
         </body>
     </html>
     '''
