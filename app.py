@@ -17,6 +17,7 @@ mesas = []
  
 # Função para distribuir os alunos nas mesas
 def distribuir_alunos():
+    print("oieee rodei")
     global mesas
     alunos = total_alunos.copy()
     random.shuffle(alunos)
@@ -61,4 +62,3 @@ if __name__ == '__main__':
     distribuir_alunos()  # Inicializa as mesas na primeira execução
     schedule_task()  # Agenda a tarefa para rodar todos os dias às 6 da manhã
     app.run(host='0.0.0.0', port=5000)
-    print("oieee rodei")
